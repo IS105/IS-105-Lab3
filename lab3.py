@@ -13,9 +13,9 @@ import subprocess
 import re
 
 # Skriv inn fullt navn på gruppemedlemene (erstatte '-' med navn slikt 'Kari Trå')
-gruppe = {  'student1': '-', \
-			'student2': '-', \
-            'student3': '-', \
+gruppe = {  'student1': 'Criyonit Kayoka', \
+			'student2': 'Mirko Grimm', \
+            'student3': 'Rand Zeid', \
 }
 
 #
@@ -56,6 +56,13 @@ for a in 1 2 3; do
 	echo "$a $b $c"
     done
 done
+
+def lab3_scripts():
+    subprocess.call("./scripts/test1.py")
+    
+    subprocess.call("./scripts/test1.sh")
+    
+    subprocess.call("./scripts/test1.pl")
 
 #
 #  Oppgave 2
@@ -105,11 +112,12 @@ os bruker: Criyonit
 #    Anta at inn-data er korrekt (ingen testing nødvendig)
 #
 def initialer(navn):
-	name = navn
-	name_split = name.split()
-	print (name_split)
-	for line in name_split:
-		print (line[0].upper())
+    
+    name = navn
+    name_split = name.split()
+    print(name_split)
+    for line in name_split:
+        print(line[0][0].upper() + '.')
 initialer("Criyonit Kayoka")
 initialer ("Rand Zeid")
 initialer ("Mirko Grimm")
@@ -134,28 +142,25 @@ initialer ("Mirko Grimm")
 #    operander (to tall) og en operatør (+, for eksempel).
 #
 def infix_to_prefix(infix):
-	return 2
-
+    tegn = re.findall(r"[+*\-\/]", infix)
+    tall = re.findall(r"[0-9]", infix)
+    total = tegn + tall
+    string = ' '.join(total)
+    return string
 
 # Kaller opp implementerte funksjoner (pseudo-testing)
 # For å teste innleveringen
 print 5*"-" + " Studenter: " + 5*"-"
 for s in gruppe.values():
-	if s is not "-":
-		print s
-
+    if s is not "-":
+        print s
 print 5*"-" + " mysysinfo() " + 5*"-"
 print min_sys_info.__doc__
 min_sys_info()
-
 print 5*"-" + " initialer() " + 5*"-"
 print initialer("Wolfgang Goethe")
-
 print 5*"-" + " infix_to_prefix() " + 5*"-"
 print infix_to_prefix("2/3")
-
 # Kalle opp din lab3_scripts() funksjon her
 print 5*"-" + " lab3_scripts() " + 5*"-"
-
-
-
+lab3_scripts()

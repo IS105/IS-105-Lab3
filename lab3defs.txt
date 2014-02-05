@@ -1,0 +1,9 @@
+Et ergulært uttrykk (regular expression): en rekke bokstaver som danner et søkemønsker.
+
+imoport - hva betyr dette i et Python program? Det betyr inkludere. Dette lar deg bruke funksjoner som er definert andre steder. 
+
+"skript"-språk: Et skript er en fil som inneholder kommandoer i et skriptspråk.
+
+Perl: et programmeringsspråk. Perl ble laget for å være et praktisk språk for å hente ut informasjon fra tekstfiler.
+
+Bash: En kommando-prosessor, typisk kjøre i et tekstvindu, slik at brukeren kan skrive inn kommandoer som forårsaker handlinger. 
